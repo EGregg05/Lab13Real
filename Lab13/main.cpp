@@ -1,13 +1,17 @@
 #include "Task3.hpp"
+#include "Animals.hpp"
 
-int main(void)
+int main()
 {
-	Base* ptr = new Base;
-	ptr->testFunction();
-	delete ptr;
-	ptr = new Derived;
-	ptr->testFunction(); // prints "Base class" because the base
-						 //class function is not virtual
-	delete ptr;
+	Mammal* pDog = new Dog;
+
+	pDog->Move();
+
+	pDog->Speak();
+
+	//Dog *pDog2 = new Dog;
+	//pDog2->Move();
+	//pDog2->Speak();
+
 	return 0;
 }

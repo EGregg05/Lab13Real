@@ -19,4 +19,4 @@ public:
 protected:
 
 	int itsAge;
-};
+};class Dog : public Mammal{public:	Dog();	~Dog();	void Move() const;	void Speak() const;};
