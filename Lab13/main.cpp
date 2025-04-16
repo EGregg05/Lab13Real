@@ -4,17 +4,17 @@ int main(void)
 {
 	std::string data = "The Data";
 	
-	List<std::string> newList();
+	List<std::string> newList;
 
-	std::cout << "Is the list empty: " << newList().isEmpty() << std::endl;
+	std::cout << "Is the list empty: " << newList.isEmpty() << std::endl;
 
-	newList().insertAtFront(data);
+	newList.insertAtFront(data);
 
-	std::cout << "Is the list empty: " << newList().isEmpty() << std::endl;
+	std::cout << "Is the list empty: " << newList.isEmpty() << std::endl;
 
-	if (!newList().isEmpty())
+	if (!newList.isEmpty())
 	{
-		newList().print();
+		newList.print();
 	}
 	
 
