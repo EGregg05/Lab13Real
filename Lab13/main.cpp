@@ -16,6 +16,12 @@ int main(void)
 	{
 		newList.print();
 	}
+
+	Queue<std::string> newQueue;
+
+	newQueue.enqueue("Ethan");
+
+	newQueue.printQ();
 	
 
 }

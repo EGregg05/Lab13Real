@@ -71,7 +71,21 @@ public:
 	void insertAtBack(const NODETYPE& newData)
 	{
 		ListNode< NODETYPE >* pNew = this->getNewNode(newData);
-		this->lastPtr->setNext(pNew);
+		ListNode< NODETYPE >* pCur = this->firstPtr;
+		if (pCur != nullptr)
+		{
+			while (pCur->getNext() != nullptr)
+			{
+				pCur = pCur->getNext();
+			}
+			pCur->setNext(pNew);
+			this->lastPtr = pNew;
+		}
+		else
+		{
+			this->firstPtr = pNew;
+			this->lastPtr = pNew;
+		}
 	}
 
 	bool removeFromFront(NODETYPE& removedData)
@@ -81,6 +95,7 @@ public:
 		ListNode< NODETYPE >* pCur = this->firstPtr;
 		this->firstPtr = this->firstPtr->getNext;
 		delete this->pCur;
+		return true;
 	}
 
 	bool removeFromBack(NODETYPE& removedData)
@@ -90,6 +105,7 @@ public:
 		ListNode< NODETYPE >* pCur = this->lastPtr;
 		this->lastPtr = nullptr;
 		delete this->pCur;
+		return true;
 	}
 
 	bool isEmpty() const
@@ -127,4 +143,25 @@ private:
 		return pNew;
 	}
 
+};
+
+template< class NODETYPE >
+class Queue : private List<NODETYPE>
+{
+public:
+
+	void enqueue(const NODETYPE& newdata)
+	{
+		this->insertAtBack(newdata);
+	}
+
+	void dequeue()
+	{
+		this->removeFromFront();
+	}
+
+	void printQ()
+	{
+		this->print();
+	}
 };
