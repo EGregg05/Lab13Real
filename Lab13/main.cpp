@@ -1,27 +1,13 @@
-#include "Template.hpp"
+#include "Task3.hpp"
 
 int main(void)
 {
-	std::string data = "The Data";
-	
-	List<std::string> newList;
-
-	std::cout << "Is the list empty: " << newList.isEmpty() << std::endl;
-
-	newList.insertAtFront(data);
-
-	std::cout << "Is the list empty: " << newList.isEmpty() << std::endl;
-
-	if (!newList.isEmpty())
-	{
-		newList.print();
-	}
-
-	Queue<std::string> newQueue;
-
-	newQueue.enqueue("Ethan");
-
-	newQueue.printQ();
-	
-
+	Base* ptr = new Base;
+	ptr->testFunction();
+	delete ptr;
+	ptr = new Derived;
+	ptr->testFunction(); // prints "Base class" because the base
+						 //class function is not virtual
+	delete ptr;
+	return 0;
 }
