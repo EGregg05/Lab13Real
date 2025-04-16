@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 template< class NODETYPE > class List; // forward declaration
 template<class NODETYPE>
@@ -108,7 +109,7 @@ public:
 		
 		while (pCur != nullptr)
 		{
-			std::cout << pCur->getData << std::endl;
+			std::cout << pCur->getData() << std::endl;
 
 			pCur = pCur->getNext();
 		}
@@ -121,7 +122,8 @@ private:
 	// Utility function to allocate a new node
 	ListNode< NODETYPE >* getNewNode(const NODETYPE& newData)
 	{
-		return ListNode<NODETYPE>* newNode = new ListNode<newData>;
+		ListNode<NODETYPE>* pNew = new ListNode<NODETYPE>(newData);
+		return pNew;
 	}
 
 };
